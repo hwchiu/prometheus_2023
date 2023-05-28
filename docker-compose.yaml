@@ -1,0 +1,58 @@
+version: '3.1'
+
+volumes:
+  prometheus_data: {}
+  prometheus_gw_data: {}
+
+networks:
+  back-tier:
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.44.0
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yaml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.config.file=/etc/prometheus/web.yaml'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    ports:
+      - 9090:9090
+    networks:
+      - back-tier
+    restart: always
+  node-exporter:
+    image: prom/node-exporter:v1.6.0
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command: 
+      - '--path.procfs=/host/proc' 
+      - '--path.sysfs=/host/sys'
+      - --collector.filesystem.ignored-mount-points
+      - "^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)"
+    ports:
+      - 9100:9100
+    networks:
+      - back-tier
+    restart: always
+
+  pushgateway:
+    image: prom/pushgateway:v1.6.0
+    container_name: pushgateway
+    restart: unless-stopped
+    volumes:
+      - prometheus_gw_data:/prometheus_gw
+    ports:
+      - "9091:9091"
+    command: 
+      - '--persistence.file=/prometheus_gw/file'
+      - '--persistence.interval=1m' 
+    networks:
+      - back-tier
+    labels:
+      org.label-schema.group: "monitoring"   
