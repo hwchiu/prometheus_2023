@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "Db3tQQcRc2US8iNNAulBRLqr4yVN8s252VfP+uDTHpSTi2jngeojzuripkOijVn01JpJFVjmxf7s5WDb6if/vQ==",
+  "success": true,
+  "projectFilePath": "/home/azureuser/prometheus_2023/dev/prometheus_example/prometheus_example.csproj",
+  "expectedPackageFiles": [
+    "/home/azureuser/.nuget/packages/microsoft.extensions.configuration/3.1.0/microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.configuration.abstractions/3.1.0/microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.configuration.binder/3.1.0/microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.dependencyinjection/3.1.0/microsoft.extensions.dependencyinjection.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/3.1.0/microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.http/3.1.0/microsoft.extensions.http.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.logging/3.1.0/microsoft.extensions.logging.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.logging.abstractions/3.1.0/microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.objectpool/7.0.0/microsoft.extensions.objectpool.7.0.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.options/3.1.0/microsoft.extensions.options.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/microsoft.extensions.primitives/3.1.0/microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+    "/home/azureuser/.nuget/packages/prometheus-net/8.0.0/prometheus-net.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
