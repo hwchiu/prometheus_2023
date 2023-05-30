@@ -1,0 +1,1 @@
+network_tx_bytes{hostname="prometheus", iface="eth0"} 1
